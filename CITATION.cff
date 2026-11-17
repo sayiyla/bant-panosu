@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use or mention Bant Panosu, please cite it as below."
+title: "Bant Panosu: a local dashboard for Claude Code sessions and agent pipelines"
+type: software
+authors:
+  - name: "Sayıyla"
+    website: "https://sayiyla.com"
+repository-code: "https://github.com/sayiyla/bant-panosu"
+url: "https://sayiyla.github.io/bant-panosu/"
+license: MIT
+version: 0.1.0
+date-released: 2026-11-17
+keywords:
+  - claude-code
+  - ai-agents
+  - observability
+  - llm-cost

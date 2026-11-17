@@ -191,4 +191,17 @@ The code is plain TypeScript run by Node (no build step) on the server and plain
 
 MIT, Copyright (c) 2026 Sayıyla. See `LICENSE` and `THIRD_PARTY.md`.
 
-Made by [sayiyla.com](https://sayiyla.com).
+## About
+
+Bant Panosu is built and used by [Sayıyla](https://sayiyla.com/?utm_source=github&utm_medium=readme&utm_campaign=bant-panosu), a Turkish publication that tests AI tools with real numbers. We run our own content pipelines with Claude Code and built this board to see what they do.
+
+Related reading on sayiyla.com (Turkish):
+
+- [Claude Code setup on Windows, Mac and VS Code](https://sayiyla.com/yazilar/claude-code-kurulumu-windows-mac-vscode-rehberi/?utm_source=github&utm_medium=readme&utm_campaign=bant-panosu)
+- [Blocking commands with Claude Code hooks](https://sayiyla.com/yazilar/claude-code-hooks-komut-engelleme/?utm_source=github&utm_medium=readme&utm_campaign=bant-panosu)
+- [10 AI coding agents compared](https://sayiyla.com/yazilar/ai-kodlama-ajanlari-10-arac-karsilastirmasi/?utm_source=github&utm_medium=readme&utm_campaign=bant-panosu)
+- [Claude Max 5x / 20x: prices and limits](https://sayiyla.com/yazilar/claude-max-5x-20x-nedir-fiyatlari-ve-limitleri/?utm_source=github&utm_medium=readme&utm_campaign=bant-panosu)
+- [AI API prices, side by side](https://sayiyla.com/api-fiyatlari/?utm_source=github&utm_medium=readme&utm_campaign=bant-panosu)
+- [Open-source AI repos we track](https://sayiyla.com/repolar/?utm_source=github&utm_medium=readme&utm_campaign=bant-panosu)
+
+Project page: [sayiyla.github.io/bant-panosu](https://sayiyla.github.io/bant-panosu/)

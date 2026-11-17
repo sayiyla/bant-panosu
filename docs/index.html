@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bant Panosu: see what your Claude Code agents do</title>
+<meta name="description" content="Bant Panosu is a free, local dashboard for Claude Code: which files your agents read and write, subagents and models, API-equivalent cost, file heat map, session replay and YAML pipelines with on/off switches. MIT, by Sayıyla.">
+<link rel="canonical" href="https://sayiyla.github.io/bant-panosu/">
+<meta property="og:title" content="Bant Panosu: see what your Claude Code agents do">
+<meta property="og:description" content="Local dashboard for Claude Code sessions and agent pipelines. Free, MIT, nothing leaves your machine.">
+<meta property="og:image" content="https://sayiyla.github.io/bant-panosu/screenshots/cream-sessions.png">
+<meta property="og:url" content="https://sayiyla.github.io/bant-panosu/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Bant Panosu",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Windows, macOS, Linux",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "license": "https://opensource.org/licenses/MIT",
+  "codeRepository": "https://github.com/sayiyla/bant-panosu",
+  "url": "https://sayiyla.github.io/bant-panosu/",
+  "description": "Local dashboard for Claude Code sessions and YAML agent pipelines: files read and written, subagents, models, cost, heat map, replay.",
+  "author": { "@type": "Organization", "name": "Sayıyla", "url": "https://sayiyla.com" }
+}
+</script>
+<style>
+  :root { --bg:#f4ecdf; --card:#fbf6ee; --ink:#2a2320; --muted:#7a6a5e; --red:#c8323c; --line:#e2d6c4; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  .wrap { max-width:980px; margin:0 auto; padding:48px 20px 64px; }
+  h1 { font-size:clamp(30px,6vw,46px); line-height:1.1; margin:0 0 12px; }
+  h1 span { display:inline-block; width:14px; height:14px; background:var(--red); margin-right:10px; vertical-align:middle; border-radius:2px; }
+  h2 { font-size:22px; margin:48px 0 12px; border-bottom:1px solid var(--line); padding-bottom:6px; }
+  .lead { font-size:19px; color:var(--muted); max-width:720px; }
+  .btns { display:flex; gap:12px; flex-wrap:wrap; margin:24px 0 32px; }
+  .btn { display:inline-block; padding:10px 18px; border:1px solid var(--ink); border-radius:4px; color:var(--ink); text-decoration:none; font:600 14px ui-monospace,Consolas,monospace; letter-spacing:.04em; }
+  .btn.dolu { background:var(--ink); color:var(--card); }
+  img { width:100%; height:auto; border:1px solid var(--line); border-radius:6px; background:var(--card); display:block; }
+  .iki { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .iki figure { margin:0; } figcaption { font-size:13px; color:var(--muted); margin-top:6px; }
+  ul { padding-left:20px; } li { margin:6px 0; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:14px; overflow-x:auto; font:14px ui-monospace,Consolas,monospace; }
+  a { color:var(--red); }
+  footer { margin-top:56px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+  @media (max-width:640px) { .iki { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1><span></span>Bant Panosu</h1>
+  <p class="lead">A free, local dashboard that shows what your Claude Code sessions and agent pipelines are doing: who read which file, which subagent ran on which model, what it cost, and where things went wrong.</p>
+  <div class="btns">
+    <a class="btn dolu" href="https://github.com/sayiyla/bant-panosu">View on GitHub</a>
+    <a class="btn" href="https://github.com/sayiyla/bant-panosu#readme">Read the docs</a>
+  </div>
+
+  <div class="iki">
+    <figure><img src="screenshots/cream-sessions.png" alt="Sessions view in the cream theme: cost, agents, files and timeline" loading="lazy"><figcaption>Sessions: cost, agents, files read and written, handoffs</figcaption></figure>
+    <figure><img src="screenshots/neon-command.png" alt="Command view in the neon theme: session replay with a particle dome" loading="lazy"><figcaption>Command: replay a whole session, neon theme</figcaption></figure>
+  </div>
+
+  <h2>What it shows</h2>
+  <ul>
+    <li><b>Live session:</b> files read and written, commands run, by the main session and every subagent.</li>
+    <li><b>Subagents:</b> model, tokens, API-equivalent cost and which files they handed to each other.</li>
+    <li><b>File heat map</b> and <b>redundant reads</b>: a file re-read although nobody changed it.</li>
+    <li><b>Errors and retries</b> in one list, <b>session replay</b> and <b>compare</b> two sessions.</li>
+    <li><b>Pipelines</b> drawn as an octopus diagram: which step feeds which, with on/off switches and model changes that preview their impact.</li>
+    <li><b>3D graph</b> of agents and files, and a read-only <b>phone view</b> on your local network.</li>
+  </ul>
+
+  <h2>Try it in 30 seconds</h2>
+<pre>git clone https://github.com/sayiyla/bant-panosu
+cd bant-panosu
+npm install
+npm run demo</pre>
+  <p>The demo uses made-up sessions. Point it at your own project with <code>npm start -- --project /path/to/project</code>. It binds to 127.0.0.1 and sends nothing anywhere.</p>
+
+  <div class="iki">
+    <figure><img src="screenshots/cream-pipelines.png" alt="Pipeline view in the cream theme" loading="lazy"><figcaption>Pipelines, cream theme</figcaption></figure>
+    <figure><img src="screenshots/neon-graph.png" alt="3D graph view in the neon theme" loading="lazy"><figcaption>3D graph, neon theme</figcaption></figure>
+  </div>
+
+  <h2>Who made it</h2>
+  <p>Bant Panosu is built by <a href="https://sayiyla.com/?utm_source=github-pages&amp;utm_medium=referral&amp;utm_campaign=bant-panosu">Sayıyla</a>, a Turkish publication that tests AI tools with real numbers. We run our own content pipelines with Claude Code and made this board to see what they actually do.</p>
+  <p>More from Sayıyla (Turkish):</p>
+  <ul>
+    <li><a href="https://sayiyla.com/yazilar/claude-code-kurulumu-windows-mac-vscode-rehberi/?utm_source=github-pages&amp;utm_medium=referral&amp;utm_campaign=bant-panosu">Claude Code kurulumu: Windows, Mac ve VS Code rehberi</a></li>
+    <li><a href="https://sayiyla.com/yazilar/claude-code-hooks-komut-engelleme/?utm_source=github-pages&amp;utm_medium=referral&amp;utm_campaign=bant-panosu">Claude Code hooks ile komut engelleme</a></li>
+    <li><a href="https://sayiyla.com/yazilar/ai-kodlama-ajanlari-10-arac-karsilastirmasi/?utm_source=github-pages&amp;utm_medium=referral&amp;utm_campaign=bant-panosu">Yapay zekâ kodlama ajanları: 10 araç karşılaştırması</a></li>
+    <li><a href="https://sayiyla.com/api-fiyatlari/?utm_source=github-pages&amp;utm_medium=referral&amp;utm_campaign=bant-panosu">Yapay zekâ API fiyatları</a></li>
+    <li><a href="https://sayiyla.com/repolar/?utm_source=github-pages&amp;utm_medium=referral&amp;utm_campaign=bant-panosu">Takip ettiğimiz açık kaynak yapay zekâ repoları</a></li>
+  </ul>
+
+  <footer>MIT license · <a href="https://github.com/sayiyla/bant-panosu">GitHub</a> · <a href="https://sayiyla.com/?utm_source=github-pages&amp;utm_medium=referral&amp;utm_campaign=bant-panosu">sayiyla.com</a></footer>
+</div>
+</body>
+</html>

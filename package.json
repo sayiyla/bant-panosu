@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "description": "Local dashboard for Claude Code sessions and YAML agent pipelines: live session view, subagents, cost, file heat map, replay, 3D graph.",
   "license": "MIT",
-  "author": "Sayıyla",
+  "author": { "name": "Sayıyla", "url": "https://sayiyla.com" },
+  "homepage": "https://sayiyla.github.io/bant-panosu/",
+  "repository": { "type": "git", "url": "https://github.com/sayiyla/bant-panosu.git" },
+  "bugs": { "url": "https://github.com/sayiyla/bant-panosu/issues" },
+  "keywords": ["claude-code", "ai-agents", "observability", "dashboard", "llm-cost", "pipelines"],
   "type": "module",
   "engines": {
     "node": ">=22.6"
