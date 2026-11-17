@@ -1,0 +1,60 @@
+{
+  "id": "20261114-080003-blog-post",
+  "pipeline": "blog-post",
+  "status": "done",
+  "createdAt": "2026-11-14T08:00:03Z",
+  "updatedAt": "2026-11-14T08:02:34.300Z",
+  "totalUsd": 0.112,
+  "steps": {
+    "research": {
+      "order": 0,
+      "status": "done",
+      "model": "anthropic/claude-haiku-5-5",
+      "durationMs": 29000,
+      "usd": 0.0062
+    },
+    "outline": {
+      "order": 1,
+      "status": "done",
+      "model": "anthropic/claude-sonnet-5-5",
+      "durationMs": 15000,
+      "usd": 0.0213
+    },
+    "draft": {
+      "order": 2,
+      "status": "done",
+      "model": "anthropic/claude-sonnet-5-5",
+      "durationMs": 55000,
+      "usd": 0.0689
+    },
+    "fact_check": {
+      "order": 3,
+      "status": "done",
+      "model": "google/gemini-3-pro",
+      "durationMs": 31000,
+      "usd": 0
+    },
+    "seo_pass": {
+      "order": 4,
+      "status": "done",
+      "model": "anthropic/claude-sonnet-5-5",
+      "durationMs": 17000,
+      "usd": 0.0156
+    },
+    "publish": {
+      "order": 5,
+      "status": "done",
+      "model": "tool/publish_post",
+      "durationMs": 2300,
+      "usd": 0
+    },
+    "notify": {
+      "order": 6,
+      "status": "skipped",
+      "model": "tool/send_notification",
+      "durationMs": 0,
+      "usd": 0
+    }
+  },
+  "note": "Post about on-device models"
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bant Panosu</title>
+<meta name="pano-token" content="__PANO_TOKEN__">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/modules.css">
+<script src="/theme.js"></script>
+<script src="/translations-tr.js"></script>
+<script src="/i18n.js"></script>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <div class="title-box">
+      <h1>Bant Panosu</h1>
+      <div id="subtitle" class="muted"></div>
+    </div>
+    <nav id="tabs" class="tabs"></nav>
+    <div id="controls" class="controls"></div>
+  </header>
+  <div class="stripes" aria-hidden="true"></div>
+  <div id="confirm"></div>
+  <div id="message" role="status" aria-live="polite"></div>
+
+  <main id="view-pipelines" class="view" hidden>
+    <div id="pipeline-picker" class="strip-box"></div>
+    <div id="pipeline-summary" class="summary"></div>
+    <div id="pipeline-tasks"></div>
+    <div id="pipeline-warnings"></div>
+    <div id="run-picker" class="strip-box"></div>
+    <div class="main-grid">
+      <section id="pipeline-diagram" class="diagram-section"></section>
+      <aside id="pipeline-panel" class="panel"></aside>
+    </div>
+  </main>
+
+  <main id="view-sessions" class="view" hidden>
+    <div id="session-picker" class="strip-box"></div>
+    <div id="session-toolbar" class="toolbar"></div>
+    <div id="session-summary" class="summary"></div>
+    <div id="session-compare"></div>
+    <div class="main-grid">
+      <section id="session-diagram" class="diagram-section"></section>
+      <aside id="session-panel" class="panel"></aside>
+    </div>
+    <div id="session-extra" class="extra-sections"></div>
+    <p id="session-footnote" class="muted small"></p>
+  </main>
+
+  <main id="view-command" class="view" hidden></main>
+  <main id="view-graph" class="view" hidden></main>
+
+  <main id="view-agents" class="view" hidden>
+    <div id="agents-top"></div>
+    <div id="agents-list" class="agent-grid"></div>
+  </main>
+
+  <main id="view-tasks" class="view" hidden>
+    <div id="tasks-top"></div>
+    <div id="tasks-strip"></div>
+    <div id="tasks-list" class="task-list"></div>
+  </main>
+</div>
+<script src="/command.js"></script>
+<script src="/graph.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

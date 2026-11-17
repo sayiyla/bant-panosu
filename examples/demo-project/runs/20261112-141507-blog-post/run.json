@@ -1,0 +1,40 @@
+{
+  "id": "20261112-141507-blog-post",
+  "pipeline": "blog-post",
+  "status": "error",
+  "createdAt": "2026-11-12T14:15:07Z",
+  "updatedAt": "2026-11-12T14:17:49.000Z",
+  "totalUsd": 0.0778,
+  "steps": {
+    "research": {
+      "order": 0,
+      "status": "done",
+      "model": "google/gemini-3-flash",
+      "durationMs": 38000,
+      "usd": 0
+    },
+    "outline": {
+      "order": 1,
+      "status": "done",
+      "model": "anthropic/claude-sonnet-5-5",
+      "durationMs": 13000,
+      "usd": 0.0201
+    },
+    "draft": {
+      "order": 2,
+      "status": "done",
+      "model": "anthropic/claude-sonnet-5-5",
+      "durationMs": 49000,
+      "usd": 0.0577
+    },
+    "fact_check": {
+      "order": 3,
+      "status": "error",
+      "model": "google/gemini-3-pro",
+      "durationMs": 60000,
+      "usd": 0,
+      "error": "Provider timeout after 60 s (no fallback left in the chain)"
+    }
+  },
+  "note": "Post about prompt caching"
+}

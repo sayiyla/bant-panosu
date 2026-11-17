@@ -1,0 +1,29 @@
+name: release-notes
+description: Turns the commit list of a release into customer-facing notes and checks them against the changelog.
+inputs:
+  version:
+    description: Release version, for example 2.4.0
+steps:
+  - id: collect
+    tool: git_log
+    description: Lists commits since the previous tag
+    inputs:
+      since: $input.version
+
+  - id: summarize
+    agent: writer
+    inputs:
+      task: release-notes
+      commits: $collect.commits
+
+  - id: check
+    agent: reviewer
+    review: true
+    inputs:
+      draft: $summarize.post
+      sources: $collect.commits
+
+  - id: publish
+    tool: publish_post
+    inputs:
+      post: $summarize.post

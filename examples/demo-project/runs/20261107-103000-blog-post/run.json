@@ -1,0 +1,60 @@
+{
+  "id": "20261107-103000-blog-post",
+  "pipeline": "blog-post",
+  "status": "done",
+  "createdAt": "2026-11-07T10:30:00Z",
+  "updatedAt": "2026-11-07T10:32:41.000Z",
+  "totalUsd": 0.0968,
+  "steps": {
+    "research": {
+      "order": 0,
+      "status": "done",
+      "model": "google/gemini-3-flash",
+      "durationMs": 41000,
+      "usd": 0
+    },
+    "outline": {
+      "order": 1,
+      "status": "done",
+      "model": "anthropic/claude-sonnet-5-5",
+      "durationMs": 14000,
+      "usd": 0.0188
+    },
+    "draft": {
+      "order": 2,
+      "status": "done",
+      "model": "anthropic/claude-sonnet-5-5",
+      "durationMs": 52000,
+      "usd": 0.0631
+    },
+    "fact_check": {
+      "order": 3,
+      "status": "done",
+      "model": "google/gemini-3-pro",
+      "durationMs": 33000,
+      "usd": 0
+    },
+    "seo_pass": {
+      "order": 4,
+      "status": "done",
+      "model": "anthropic/claude-sonnet-5-5",
+      "durationMs": 16000,
+      "usd": 0.0149
+    },
+    "publish": {
+      "order": 5,
+      "status": "done",
+      "model": "tool/publish_post",
+      "durationMs": 2100,
+      "usd": 0
+    },
+    "notify": {
+      "order": 6,
+      "status": "done",
+      "model": "tool/send_notification",
+      "durationMs": 900,
+      "usd": 0
+    }
+  },
+  "note": "Post about vector databases"
+}

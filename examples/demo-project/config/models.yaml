@@ -1,0 +1,11 @@
+# Optional. Lets agents pick a named tier instead of a fixed model, and marks which providers cost money.
+tiers:
+  standard:
+    - anthropic/claude-sonnet-5-5
+    - anthropic/claude-haiku-5-5
+  deep:
+    - anthropic/claude-opus-5-5
+    - anthropic/claude-sonnet-5-5
+providers:
+  anthropic: { paid: true }
+  google: { paid: false }

@@ -1,0 +1,39 @@
+{
+  "id": "20261110-160500-release-notes",
+  "pipeline": "release-notes",
+  "status": "done",
+  "createdAt": "2026-11-10T16:05:00Z",
+  "updatedAt": "2026-11-10T16:05:45.200Z",
+  "totalUsd": 0.0297,
+  "steps": {
+    "collect": {
+      "order": 0,
+      "status": "done",
+      "model": "tool/git_log",
+      "durationMs": 1200,
+      "usd": 0
+    },
+    "summarize": {
+      "order": 1,
+      "status": "done",
+      "model": "anthropic/claude-sonnet-5-5",
+      "durationMs": 22000,
+      "usd": 0.0297
+    },
+    "check": {
+      "order": 2,
+      "status": "done",
+      "model": "google/gemini-3-pro",
+      "durationMs": 18000,
+      "usd": 0
+    },
+    "publish": {
+      "order": 3,
+      "status": "done",
+      "model": "tool/publish_post",
+      "durationMs": 2000,
+      "usd": 0
+    }
+  },
+  "note": "Release 2.4.0"
+}

@@ -1,0 +1,60 @@
+# Example pipeline: a topic goes in, a reviewed blog post comes out.
+# Steps run top to bottom. `$step.field` reads the output of an earlier step, `$input.name` reads a pipeline input.
+name: blog-post
+description: Topic in, reviewed blog post out. Research and outline feed the draft; a reviewer on a different model family fact-checks it before it is published.
+inputs:
+  topic:
+    description: What the post is about
+  audience:
+    description: Who is going to read it
+steps:
+  - id: research
+    agent: researcher
+    inputs:
+      topic: $input.topic
+
+  - id: outline
+    agent: writer
+    inputs:
+      task: outline
+      topic: $input.topic
+      notes: $research.notes
+
+  - id: draft
+    agent: writer
+    inputs:
+      task: draft
+      outline: $outline.outline
+      notes: $research.notes
+      audience: $input.audience
+
+  - id: fact_check
+    agent: reviewer
+    review:
+      max_rounds: 1
+    inputs:
+      draft: $draft.post
+      sources: $research.sources
+
+  - id: seo_pass
+    agent: writer
+    optional: true
+    inputs:
+      task: seo
+      draft: $draft.post
+      feedback: $fact_check.report
+
+  - id: publish
+    tool: publish_post
+    description: Pushes the post to the CMS as a draft
+    inputs:
+      post: $draft.post
+      seo: $seo_pass.meta
+
+  - id: notify
+    tool: send_notification
+    optional: true
+    description: Posts a short message to the team channel
+    inputs:
+      message: A new post is ready
+      link: $publish.url
